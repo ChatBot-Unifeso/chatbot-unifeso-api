@@ -12,3 +12,27 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Company {
+  id_company String     @id @default(uuid())
+  name       String
+  slug       String     @unique
+  cnpj       String
+  Enployee   Enployee[]
+}
+
+model Enployee {
+  id_enployee String  @id @default(uuid())
+  name        String
+  email       String  @unique
+  password    String
+  salt        String
+  id_company  String
+  company     Company @relation(fields: [id_company], references: [id_company])
+  roles       Roles
+}
+
+enum Roles {
+  adm
+  user
+}
