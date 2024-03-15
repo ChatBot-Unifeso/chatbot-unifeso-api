@@ -18,11 +18,11 @@ model Company {
   name       String
   slug       String     @unique
   cnpj       String
-  Enployee   Enployee[]
+  enployee   Employee[]
 }
 
-model Enployee {
-  id_enployee String  @id @default(uuid())
+model Employee {
+  id_employee String  @id @default(uuid())
   name        String
   email       String  @unique
   password    String
