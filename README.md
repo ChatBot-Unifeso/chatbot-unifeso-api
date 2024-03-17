@@ -1,73 +1,55 @@
+<h1 align="center">Connect Feso - API</h1>
+
+## Descrição do Projeto
+
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+  API de gerenciamento de fluxo de conversas de chatbot.
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Requisitos do software
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+### Requisitos Funcionais
 
-## Description
+RF01 - O sistema deve permitir o cadastro de empresa.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+RF02 - O sistema deve permitir o cadastro de usuário.
 
-## Installation
+RF03 - O sistema deve permitir o cadastro de chatbot.
 
-```bash
-$ yarn install
-```
+RF04 - O sistema deve permitir o cadastro de fluxo de conversa.
 
-## Running the app
+RF05 - O sistema deve permitir o cadastro de menus.
 
-```bash
-# development
-$ yarn run start
+RF06 - O sistema deve permitir o opção de menu de conversa.
 
-# watch mode
-$ yarn run start:dev
+### Requisitos Não Funcionais
 
-# production mode
-$ yarn run start:prod
-```
+Fazer
 
-## Test
+### Regras de Negócio
 
-```bash
-# unit tests
-$ yarn run test
+RN01 - O os funcionários com permissão de administrador podem ver o relatório das conversas dividias por usuário.
 
-# e2e tests
-$ yarn run test:e2e
+RN02 - O os funcionários com permissão de administrador podem ver o relatório das conversas dividias por chatbot.
 
-# test coverage
-$ yarn run test:cov
-```
+### Requisitos de segurança
 
-## Support
+## Tecnologias Utilizadas
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+- [Node.js](https://nodejs.org/en/)
 
-## Stay in touch
+<!-- nestjs -->
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- [NestJS](https://nestjs.com/)
 
-## License
+<!-- prisma -->
 
-Nest is [MIT licensed](LICENSE).
+- [Prisma](https://www.prisma.io/)
+
+<!-- postgres -->
+
+- [PostgreSQL](https://www.postgresql.org/)
+
+## Diagrama de Entidade Relacionamento
+
+- [Diagrama de Entidade Relacionamento](https://drive.google.com/file/d/1_lArfcV2QQR6s2pukjWyxiSihHAgfoD6/view?usp=sharing)
