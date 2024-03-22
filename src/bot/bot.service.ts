@@ -20,23 +20,38 @@ export class BotService {
     });
   }
 
-  addMenuInitial(id_menu: string, data: any) {
-    throw new Error('Method not implemented.');
+ async  addMenuInitial(id_menu: string, data: any) {
+    
   }
 
-  findAll() {
-    return `This action returns all bot`;
+  async findAll() {
+    return await prisma.bot.findMany();
+    
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} bot`;
+  async findOne(id_bot: string) {
+    return await prisma.bot.findUnique({
+      where: {
+        id_bot
+      }
+    });
   }
 
-  update(id: number, updateBotDto: UpdateBotDto) {
-    return `This action updates a #${id} bot`;
+  async update(id_bot: string, updateBotDto: UpdateBotDto) {
+    return await prisma.bot.update({
+      where: {
+        id_bot
+      },
+      data: updateBotDto
+    });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} bot`;
+  async remove(id_bot: string) {
+    return await prisma.bot.delete({
+      where: {
+        id_bot
+      }
+    });
   }
+
 }
