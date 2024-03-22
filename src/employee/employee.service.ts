@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateEmployeeDto } from './dto/create-employee.dto';
 import { UpdateEmployeeDto } from './dto/update-employee.dto';
 import { prisma } from 'src/prisma';
@@ -7,22 +7,28 @@ import { genSaltSync } from 'bcryptjs';
 @Injectable()
 export class EmployeeService {
   async create(createEmployeeDto: CreateEmployeeDto) {
-    const { id_company, data_employee } = createEmployeeDto
-    const salt = genSaltSync(10)
-
-    createEmployeeDto.data_employee.salt = salt
-
-    return await prisma.employee.create({
-      data: {
-        ...data_employee,
-        company: {
-          connect: {
-            id_company
+    try {
+      const { id_company, data_employee } = createEmployeeDto;
+  
+      const salt = genSaltSync(10);
+      createEmployeeDto.data_employee.salt = salt;
+  
+      return await prisma.employee.create({
+        data: {
+          ...data_employee,
+          company: {
+            connect: {
+              id_company
+            }
           }
         }
-      }
-    })
+      });
+    } catch (error) {
+      console.error(error);
+      throw new NotFoundException('Algo deu errado ao criar o funcionário');
+    }
   }
+  
 
   async findAll() {
     return await prisma.employee.findMany()
