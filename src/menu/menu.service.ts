@@ -3,6 +3,7 @@ import { CreateMenuDto } from './dto/create-menu.dto';
 import { UpdateMenuDto } from './dto/update-menu.dto';
 import { prisma } from 'src/prisma';
 
+
 @Injectable()
 export class MenuService {
   async create(createMenuDto: CreateMenuDto) {
@@ -23,15 +24,29 @@ export class MenuService {
     return await prisma.menu.findMany();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} menu`;
+  async findOne(id_menu: string) {
+    return await prisma.menu.findUnique({
+      where: {
+        id_menu
+      }
+    });
+
   }
 
-  update(id: number, updateMenuDto: UpdateMenuDto) {
-    return `This action updates a #${id} menu`;
+  async update(id_menu: string, updateMenuDto: UpdateMenuDto) {
+    return await prisma.menu.update({
+      where: {
+        id_menu
+      },
+      data: updateMenuDto
+    });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} menu`;
+  async remove(id_menu: string) {
+    return await prisma.menu.delete({
+      where: {
+        id_menu
+      }
+    });
   }
 }
