@@ -19,12 +19,12 @@ export class BotController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.botService.findOne(+id);
+    return this.botService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateBotDto: UpdateBotDto) {
-    return this.botService.update(+id, updateBotDto);
+    return this.botService.update(id, updateBotDto);
   }
 
   @Patch('add_menu_initial/:id_menu')
@@ -34,6 +34,6 @@ export class BotController {
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.botService.remove(+id);
+    return this.botService.remove(id);
   }
 }
